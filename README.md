@@ -39,7 +39,7 @@ This IAM policy grants and denies specific permissions for Amazon S3 buckets and
 
 ## 👷 Task 2: IAM User Creation Restriction
 
-This IAM policy permits the creation of IAM users whose names begin with the prefix `engineer`.
+This IAM policy permits creating IAM users whose names begin with the prefix `engineer`.
 
 ### 📜 Policy
 
@@ -61,53 +61,5 @@ This IAM policy permits the creation of IAM users whose names begin with the pre
 - Helps enforce organisational naming conventions and restrict the scope of user creation.
 
 
-## 🧱 Task 3: ARN Formats for AWS Resources
 
-This section provides a reference guide for constructing **Amazon Resource Names (ARNs)** across various AWS services. ARNs uniquely identify AWS resources and are critical for defining precise IAM policies.
-
-### 🔗 Official AWS Documentation
-
-- [S3 Resources ARN Reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies)
-- [IAM Resources ARN Reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-resources-for-iam-policies)
-- [EC2 Resources ARN Reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-resources-for-iam-policies)
-
----
-
-### 📦 S3 ARN Formats
-
-| Resource Type        | ARN Format                                                                 |
-|----------------------|----------------------------------------------------------------------------|
-| Access Point         | `arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}` |
-| Bucket               | `arn:${Partition}:s3:::${BucketName}`                                     |
-| Storage Lens Group   | `arn:${Partition}:s3:${Region}:${Account}:storage-lens-group/${Name}`     |
-| Object               | `arn:${Partition}:s3:::${BucketName}/${ObjectName}`                        |
-
----
-
-### 👤 IAM ARN Formats
-
-| Resource Type | ARN Format                                                             |
-|---------------|------------------------------------------------------------------------|
-| MFA Device    | `arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}`           |
-| Role          | `arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}`            |
-| User          | `arn:${Partition}:iam::${Account}:user/${UserNameWithPath}`            |
-
----
-
-### 🖥 EC2 ARN Formats
-
-| Resource Type | ARN Format                                                              |
-|---------------|-------------------------------------------------------------------------|
-| Elastic IP    | `arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}`  |
-| Fleet         | `arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}`            |
-| Instance      | `arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}`      |
-| Image         | `arn:${Partition}:ec2:${Region}::image/${ImageId}`                      |
-
----
-
-### 📘 Notes
-
-- `${Partition}` is typically `aws`, but may be `aws-cn` for China or `aws-us-gov` for GovCloud.
-- Replace variables such as `${Region}`, `${Account}`, and `${BucketName}` with actual values.
-- This reference helps ensure the accurate configuration of IAM policies with resource-level permissions.
 
