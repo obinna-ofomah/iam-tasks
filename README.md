@@ -41,25 +41,7 @@ This IAM policy grants and denies specific permissions for Amazon S3 buckets and
 
 This IAM policy permits creating IAM users whose names begin with the prefix `engineer`.
 
-### 📜 Policy
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Statement1",
-      "Effect": "Allow",
-      "Action": ["iam:CreateUser"],
-      "Resource": ["arn:aws:iam::340752803932:user/engineer*"]
-    }
-  ]
-}
-
-### 🔍 Summary
+### 📜 Policy Breakdown
 - Ensures that only IAM users with a naming pattern of engineer* can be created.
 - Helps enforce organisational naming conventions and restrict the scope of user creation.
-
-
-
 
